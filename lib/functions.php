@@ -1,22 +1,4 @@
 <?php
-function mortgage($price, $percentage, $period) {
-    /* const PRICE = 10000000;
-    const PERCENTAGE = 8.5;
-    const PERIOD = 25*12;
-    */
-    $period *= 12;
-
-    $stavka = $percentage / 12 / 100;
-    $cf = ($stavka*(1+$stavka)**$period)/((1+$stavka)**$period-1);
-    // echo $cf;
-    $montly = $cf * $price;
-    $montly = round($montly);
-    $extra_pay = $period * 12 * $montly - $price;
-
-    echo '<br>Ежемесячный платеж ' . $montly . ' рублей';
-    echo '<br>Переплата ' . $extra_pay . ' рублей';
-}
-
 function pagination($posts, $postPerPage, $currentPage) {
     $len = count($posts);
     if ($len < 3) return;
@@ -30,4 +12,43 @@ function pagination($posts, $postPerPage, $currentPage) {
         $nextPage = $currentPage + 1;
         echo "<a href='/?p=blog&page=$nextPage' class='next'>Вперед</a>";
     }
+}
+
+function menu(array $navigation): string {
+    $result = '<nav><ul>';
+
+    foreach($navigation as $link => $linkName) {
+        $result .= "<li><a href='/?p=$link' class='lnk'>$linkName</a></li>";
+    }
+
+    return $result . '</ul></nav>';
+}
+
+function hug_div(array $strs): string {
+    $result = '';
+
+    foreach ($strs as $str) {
+        $result .= "<div>$str</div>";
+    }
+
+    return $result;
+}
+
+function hug_h2(array $titles) {
+    $result = '';
+
+    foreach ($titles as $title) {
+        $result .= "<h2>$title</h2>";
+    }
+
+    return $result;
+}
+
+function renderHtml(callable $fn, string ...$strs): void {
+    echo $fn($strs);
+}
+
+// принимает строку и список "запретных" слов, которые будут вырезаны
+function cleanStr(string $str, string ...$args): string {
+    return str_replace($args, '', $str);
 }

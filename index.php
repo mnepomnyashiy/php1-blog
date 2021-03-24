@@ -24,17 +24,7 @@
     <div class="wrapper bcg-white">
 
         <header>
-            <nav>
-                <ul>
-                    <?php foreach($navigation as $link => $linkName): ?>
-                     <li>
-                         <a href="/?p=<?= $link ?>" class="lnk">
-                             <?= $linkName ?>
-                        </a>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
-            </nav>
+            <?= menu($navigation) ?>
         </header>
 
         <main>

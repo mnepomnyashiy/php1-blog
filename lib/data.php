@@ -52,12 +52,12 @@
             "sort" => 10,
         ],
         [
-            "title" => "Hello world",
+            "title" => "Hello world 2",
             "body" => "Lorem100",
             "sort" => 10,
         ],
         [
-            "title" => "Best programming language",
+            "title" => "Best programming language 2",
             "body" => "Geuss it",
             "sort" => 10,
         ],
@@ -72,12 +72,12 @@
             "sort" => 10,
         ],
         [
-            "title" => "Hello world",
+            "title" => "Hello world 3",
             "body" => "Lorem100",
             "sort" => 10,
         ],
         [
-            "title" => "Best programming language",
+            "title" => "Best programming language 3",
             "body" => "Geuss it",
             "sort" => 10,
         ],

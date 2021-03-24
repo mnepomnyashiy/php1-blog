@@ -1,6 +1,6 @@
 <?php
     $pageNumber = $_GET['page'] ?? 1;
-    const POSTS_PER_PAGE = 4;
+    const POSTS_PER_PAGE = 5;
 ?>
 
 <div class="main__center">
@@ -16,7 +16,6 @@
 
     <?php
         $index = $pageNumber == 1 ? 0 : $pageNumber * POSTS_PER_PAGE - POSTS_PER_PAGE;
-        // $len = count($posts);
         $len = POSTS_PER_PAGE;
     ?>
 
