@@ -1,5 +1,5 @@
 <?php
-function pagination($posts, $postPerPage, $currentPage) {
+function pagination(array $posts, number $postPerPage, number $currentPage): void {
     $len = count($posts);
 
     if ($currentPage > 1) {
@@ -52,7 +52,7 @@ function cleanStr(string $str, string ...$args): string {
     return str_replace($args, '', $str);
 }
 
-function renderHtmlList($list) {
+function renderHtmlList(array $list): string {
     $result = '<ul>';
 
     // хотелось через foreach, но по разметке не валидно получается
