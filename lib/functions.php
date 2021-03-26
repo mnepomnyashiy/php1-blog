@@ -1,7 +1,6 @@
 <?php
 function pagination($posts, $postPerPage, $currentPage) {
     $len = count($posts);
-    if ($len < 3) return;
 
     if ($currentPage > 1) {
         $prevPage = $currentPage - 1;
@@ -51,4 +50,32 @@ function renderHtml(callable $fn, string ...$strs): void {
 // принимает строку и список "запретных" слов, которые будут вырезаны
 function cleanStr(string $str, string ...$args): string {
     return str_replace($args, '', $str);
+}
+
+function renderHtmlList($list) {
+    $result = '<ul>';
+
+    // хотелось через foreach, но по разметке не валидно получается
+    // foreach ($list as $item) {
+    //     if (is_array($item)) {
+    //         $result .= '<li>' . renderHtmlList($item) . '</li>';
+    //     } else {
+    //         $result .= "<li>$item</li>";
+    //     }
+    // }
+
+    // пришлось делать так
+    $len = count($list);
+    for ($i = 0; $i < $len; $i++) {
+        $result .= '<li>' . $list[$i];
+
+        if ($i + 1 !== $len && is_array($list[$i+1])) {
+            $result .= renderHtmlList($list[$i+1]);
+            $i++;
+        }
+
+        $result .= '</li>';
+    }
+
+    return $result . '</ul>';
 }

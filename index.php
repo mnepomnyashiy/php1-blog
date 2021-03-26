@@ -28,6 +28,7 @@
         </header>
 
         <main>
+            <?= renderHtmlList($twoLevelList); ?>
             <?php include("pages/$page"); ?>
         </main>
 

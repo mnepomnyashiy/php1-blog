@@ -92,3 +92,16 @@
             "sort" => 10,
         ],
     ];
+
+    $twoLevelList = [
+        'Link 1',
+        ['Sublink 1.1', 'Sublink 1.2'],
+        'Link 2',
+        'Link 3',
+        [
+            'Sublink 3.1',
+            ['Sublink 3.1.1', 'Sublink 3.1.2'],
+            'Sublink 3.2'
+        ],
+        'Link 4'
+    ];
