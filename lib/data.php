@@ -39,12 +39,12 @@
         [
             "title" => "Best programming language",
             "body" => "Geuss it",
-            "sort" => 10,
+            "sort" => 5,
         ],
         [
             "title" => "Aliens between us",
             "body" => "Lorem100",
-            "sort" => 10,
+            "sort" => 2,
         ],
         [
             "title" => "JS vs php",
@@ -74,7 +74,7 @@
         [
             "title" => "Hello world 3",
             "body" => "Lorem100",
-            "sort" => 10,
+            "sort" => 1,
         ],
         [
             "title" => "Best programming language 3",

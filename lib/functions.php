@@ -1,5 +1,5 @@
 <?php
-function pagination(array $posts, number $postPerPage, number $currentPage): void {
+function pagination(array $posts, int $postPerPage, int $currentPage): void {
     $len = count($posts);
 
     if ($currentPage > 1) {
@@ -55,16 +55,6 @@ function cleanStr(string $str, string ...$args): string {
 function renderHtmlList(array $list): string {
     $result = '<ul>';
 
-    // хотелось через foreach, но по разметке не валидно получается
-    // foreach ($list as $item) {
-    //     if (is_array($item)) {
-    //         $result .= '<li>' . renderHtmlList($item) . '</li>';
-    //     } else {
-    //         $result .= "<li>$item</li>";
-    //     }
-    // }
-
-    // пришлось делать так
     $len = count($list);
     for ($i = 0; $i < $len; $i++) {
         $result .= '<li>' . $list[$i];
@@ -79,3 +69,9 @@ function renderHtmlList(array $list): string {
 
     return $result . '</ul>';
 }
+
+$userSort = function(mixed $a, mixed $b) {
+    return $a['sort'] <=> $b['sort'];
+};
+
+$userSortArrow = fn($a, $b) => $a['sort'] <=> $b['sort'];

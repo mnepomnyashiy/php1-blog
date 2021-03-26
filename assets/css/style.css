@@ -242,3 +242,37 @@ td {
     margin-left: auto;
     justify-self: flex-end;
 }
+input {
+    outline: none;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+    display: block;
+    background: none;
+    font-size: 12px;
+    height: 50px;
+    width: 100%;
+    color: var(--font-black);
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+}
+
+input[type='submit'] {
+    border-color: unset;
+    cursor: pointer;
+}
+
+.contacts__form-group {
+    margin-bottom: 30px;
+}
+
+.contacts__form-group input {
+    font-family: 'Roboto Mono';
+}
+
+.contacts__form-group textarea {
+    font-family: 'Roboto Mono';
+}

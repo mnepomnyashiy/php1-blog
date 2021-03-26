@@ -1,6 +1,5 @@
 <?php    
-    include('lib/data.php');
-    include('lib/functions.php');
+    include('include.php');
 ?>
 <!doctype html>
 <html lang="ru">
@@ -28,7 +27,6 @@
         </header>
 
         <main>
-            <?= renderHtmlList($twoLevelList); ?>
             <?php include("pages/$page"); ?>
         </main>
 

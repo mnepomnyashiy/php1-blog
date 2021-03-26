@@ -1,9 +1,12 @@
 <?php
     $pageNumber = $_GET['page'] ?? 1;
     const POSTS_PER_PAGE = 5;
+    
+    usort($posts, $userSortArrow);
 
     $arr = array_chunk($posts, POSTS_PER_PAGE);
     $currentPosts = $arr[$pageNumber - 1];
+
 ?>
 
 <div class="main__center">
