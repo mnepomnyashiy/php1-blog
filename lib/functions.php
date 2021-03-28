@@ -75,3 +75,12 @@ $userSort = function(mixed $a, mixed $b) {
 };
 
 $userSortArrow = fn($a, $b) => $a['sort'] <=> $b['sort'];
+
+function countUserViews(string $key): int {
+    $prevCount = isset($_COOKIE[$key]) ? (int)$_COOKIE[$key] : 0;
+
+    $currentCount = $prevCount + 1;
+    setcookie($key, $currentCount);
+
+    return $currentCount;
+}

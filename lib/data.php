@@ -18,6 +18,7 @@
         'resume' => 'resume.php',
         'blog' => 'blog.php',
         'events' => 'events.php',
+        'admin' => 'admin.php',
         default => 'notfound.php'
     };
 
@@ -28,6 +29,7 @@
         'resume' => 'Резюме',
         'portfolio' => 'Портфолио',
         'contacts' => 'Контакты',
+        'admin' => 'Админка',
     ];
 
     $posts = [

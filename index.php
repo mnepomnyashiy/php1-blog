@@ -1,5 +1,8 @@
 <?php    
     include('include.php');
+
+    countUserViews('visits');
+
 ?>
 <!doctype html>
 <html lang="ru">
