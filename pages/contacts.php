@@ -1,5 +1,6 @@
 <?php
     $errors = [];
+    $successMessage = '';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = strip_tags($_POST['name']) ?? null; // пустая строка придет, если поле не заполнено
@@ -16,6 +17,7 @@
         if (count($errors) === 0) {
             $data = "Имя: $name, Email: $email, Сообщение: $message" . PHP_EOL;            
             file_put_contents('formdata.txt', $data, FILE_APPEND);
+            $successMessage = 'Данные успешно отправлены!';
         }
     }
 ?>
@@ -40,6 +42,12 @@
                         <?= $error; ?>
                 </div>  
             <?php endforeach; ?>
+
+            <?php
+                if (strlen($successMessage) > 0) {
+                    echo "$successMessage";
+                }
+            ?>
             <input class="btn bcg-green font-white roboto" type="submit" value="Написать">
         </form>
     </section>

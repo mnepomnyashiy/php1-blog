@@ -1,0 +1,5 @@
+{
+    "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "Default High Contrast",
+    "php.validate.executablePath": "C:\\xampp8\\php\\php.exe"
+}
