@@ -1,12 +1,10 @@
 <?php
-    $isAuth = isset($_COOKIE['PHPSESSID']) ? true : false;
+    $isAuth = isset($_COOKIE['PHPSESSID']);
 
     $errors = [];
 
     if (isset($_POST['login'])) {
-        $users = file_get_contents('users.txt');
-
-        $users = explode(PHP_EOL, $users);
+        $users = explode(PHP_EOL, file_get_contents('users.txt'));
 
         $isUserExists = false;
 
